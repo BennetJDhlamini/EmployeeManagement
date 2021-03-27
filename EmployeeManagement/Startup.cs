@@ -47,8 +47,8 @@ namespace EmployeeManagement
             }).AddRazorRuntimeCompilation();
             services.AddAuthentication().AddGoogle(options =>
             {
-                options.ClientId = "633568638625-ukecvedj78b81lujdcespterhcgd1hj5.apps.googleusercontent.com";
-                options.ClientSecret = "FIrCIYmvIy5SxrwrRYEX5KTJ";
+                options.ClientId = "906635792437-42g3inuh2338tj8sdfk380scsfqluc8l.apps.googleusercontent.com";
+                options.ClientSecret = "9JdWGrRB0AwUXGUk5z9zOkuD";
             })
                 .AddFacebook(options =>
                 {
