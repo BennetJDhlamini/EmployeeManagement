@@ -1,0 +1,31 @@
+﻿@model HomeDetailsViewModel
+
+@{
+    ViewBag.Title = "Employee Details";
+    var photoPath = "~/images/" + (Model.Employee.ImagePath ?? "personIcon.png");
+}
+<h1 class="text-center">Employee Details</h1>
+<hr />
+
+<div class="alert alert-primary mt-1 mb-1" style="background-color:transparent; border:none;">
+    <h4 class="text-center">Name: @Model.Employee.Name</h4>
+    <h5 class="text-center">Gender: @Model.Employee.Gender</h5>
+    <h5 class="text-center">Role: @Model.Employee.Role</h5>
+    <h5 class="text-center">Email: @Model.Employee.Email</h5>
+    <h5 class="text-center">Office contact number: @Model.Employee.Contact</h5>
+    <h5 class="text-center">Office: @Model.Employee.Office</h5>
+    <div class="text-center">
+        <img src="@photoPath" height="300" width="300" asp-append-version="true" />
+    </div>
+    <div class="text-center">
+        <a asp-controller="home" asp-action="Index" asp-route-id="@Model.Employee.Id" class="btn btn-primary m-1">Back</a>
+        <a asp-controller="home" asp-action="edit" asp-route-id="@Model.Employee.Id" class="btn btn-primary m-1">Edit</a>
+        <a asp-controller="home" asp-action="delete" asp-route-id="@Model.Employee.Id" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
+
+

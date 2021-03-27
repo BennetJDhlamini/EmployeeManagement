@@ -1,0 +1,51 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+<h1>User Registration</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input style="background-color:transparent;" asp-for="Email" class="form-control" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input style="background-color:transparent;" asp-for="Password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input style="background-color:transparent;" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Gender" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <select style="background-color:transparent;" asp-for="Gender" class="custom-select mr-sm-2"
+                            asp-items="Html.GetEnumSelectList<Gen>()">
+                        <option value="">Please Select</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input style="background-color:transparent;" asp-for="PhoneNumber" class="form-control" placeholder="Eg. 0604804427 or +27604804427" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location"></label>
+                <input style="background-color:transparent;" asp-for="Location" class="form-control" placeholder="Location" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-primary" title="Register">Register</button>
+        </form>
+    </div>
+</div>

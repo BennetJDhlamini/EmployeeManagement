@@ -1,0 +1,42 @@
+﻿@model Employee
+
+@{
+    ViewBag.Title = "Delete Employee";
+    var photoPath = "~/images/" + (Model.ImagePath ?? "personIcon.png");
+}
+
+
+<form enctype="multipart/form-data" asp-controller="home" asp-action="delete" method="post" class="mt-3">
+    <div class="alert mt-1 mb-1" style="background-color:red;">
+        <h4 style="color:maroon;" class="text-center">Note that this employee will be permanently deleted and can not be recovered!!!</h4>
+        <hr />
+        <h6 style="color:maroon;" class="text-center">Please confirm deleting this employee:</h6>
+        <h4 style="color:maroon;" class="text-center">Name: @Model.Name</h4>
+        <h4 style="color:maroon;" class="text-center">Gender: @Model.Gender</h4>
+        <h4 style="color:maroon;" class="text-center">Role: @Model.Role</h4>
+        <h4 style="color:maroon;" class="text-center">Email: @Model.Email</h4>
+        <h4 style="color:maroon;" class="text-center">Office contact number: @Model.Contact</h4>
+        <h4 style="color:maroon;" class="text-center">Office: @Model.Office</h4>
+        <div class="text-center">
+            <img src="@photoPath" height="300" width="300" asp-append-version="true" />
+        </div>
+        <h1></h1>
+        <div class="text-center">
+            <button type="submit" class="btn btn-danger">Confirm</button>
+            <a asp-action="index" asp-controller="home" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
+        @section Scripts {
+            <script>
+                $(document).ready(function () {
+                    $('.custom-file-input').on("change", function () {
+                        var fileName = $(this).val().split("\\").pop();
+                        $(this).next('.custom-file-label').html(fileName);
+                    });
+                });
+            </script>
+        }
+</form>
+
+
