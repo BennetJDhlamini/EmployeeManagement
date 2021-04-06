@@ -136,7 +136,7 @@ namespace EmployeeManagement.Controllers
                     var passwordResetLink = Url.Action("ResetPassword", "Account",
                             new { email = model.Email, token = token }, Request.Scheme);
 
-                    MailMessage mailMessage = new MailMessage("bennetjdhlamini@gmail.com", user.Email);
+                    MailMessage mailMessage = new MailMessage("Add Email", user.Email);
                     mailMessage.Subject = "Employee Management Password reset";
                     mailMessage.Body = "Please click on the following link to reset your password: " + passwordResetLink;
                     mailMessage.IsBodyHtml = false;
@@ -147,7 +147,7 @@ namespace EmployeeManagement.Controllers
                     smtpClient.Port = 25;
                     smtpClient.EnableSsl = true;
 
-                    NetworkCredential networkCredential = new NetworkCredential("bennetjdhlamini@gmail.com", "Dhl06Ben");
+                    NetworkCredential networkCredential = new NetworkCredential("Add Email", "Add Password");
                     smtpClient.UseDefaultCredentials = false;
                     smtpClient.Credentials = networkCredential;
                     smtpClient.Send(mailMessage);
@@ -257,7 +257,7 @@ namespace EmployeeManagement.Controllers
 
                     var confirmationLink = Url.Action("ConfirmEmail", "Account",
                         new { userId = user.Id, token = token }, Request.Scheme);
-                    MailMessage mailMessage = new MailMessage("bennetjdhlamini@gmail.com", user.Email);
+                    MailMessage mailMessage = new MailMessage("Add Email", user.Email);
                     mailMessage.Subject = "Employee management Email Confirmation";
                     mailMessage.Body = "Please click on the following link to confirm your email " + confirmationLink;
                     mailMessage.IsBodyHtml = false;
@@ -268,7 +268,7 @@ namespace EmployeeManagement.Controllers
                     smtpClient.Port = 25;
                     smtpClient.EnableSsl = true;
 
-                    NetworkCredential networkCredential = new NetworkCredential("bennetjdhlamini@gmail.com", "Dhl06Ben");
+                    NetworkCredential networkCredential = new NetworkCredential("Add Email", "Add password");
                     smtpClient.UseDefaultCredentials = false;
                     smtpClient.Credentials = networkCredential;
                     smtpClient.Send(mailMessage);
@@ -455,7 +455,7 @@ namespace EmployeeManagement.Controllers
                         var confirmationLink = Url.Action("ConfirmEmail", "Account",
                                         new { userId = user.Id, token = token }, Request.Scheme);
 
-                        MailMessage mailMessage = new MailMessage("bennetjdhlamini@gmail.com", user.Email);
+                        MailMessage mailMessage = new MailMessage("Add Email", user.Email);
                         mailMessage.Subject = "Employee Management Email Confirmation";
                         mailMessage.Body = "Please click on the following link to confirm your email " + confirmationLink;
                         mailMessage.IsBodyHtml = false;
@@ -466,7 +466,7 @@ namespace EmployeeManagement.Controllers
                         smtpClient.Port = 25;
                         smtpClient.EnableSsl = true;
 
-                        NetworkCredential networkCredential = new NetworkCredential("bennetjdhlamini@gmail.com", "Dhl06Ben");
+                        NetworkCredential networkCredential = new NetworkCredential("Add Email", "Add password");
                         smtpClient.UseDefaultCredentials = false;
                         smtpClient.Credentials = networkCredential;
                         smtpClient.Send(mailMessage);

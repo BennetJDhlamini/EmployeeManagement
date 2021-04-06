@@ -47,13 +47,13 @@ namespace EmployeeManagement
             }).AddRazorRuntimeCompilation();
             services.AddAuthentication().AddGoogle(options =>
             {
-                options.ClientId = "906635792437-42g3inuh2338tj8sdfk380scsfqluc8l.apps.googleusercontent.com";
-                options.ClientSecret = "9JdWGrRB0AwUXGUk5z9zOkuD";
+                options.ClientId = "Add client id";
+                options.ClientSecret = "add client secrete ";
             })
                 .AddFacebook(options =>
                 {
-                    options.AppId = "1521352591387294";
-                    options.AppSecret = "d819e6af8adc695b136a3cf54cfe481d";
+                    options.AppId = "Add app id";
+                    options.AppSecret = "add app secrete";
                 });
             services.ConfigureApplicationCookie(options =>
             {
