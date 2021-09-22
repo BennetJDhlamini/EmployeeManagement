@@ -31,7 +31,7 @@ form.example button {
     width: 20%;
     padding: 10px;
     background-color: #1b6ec2;
-    color: white;
+    color: black;
     font-size: 17px;
     border-color: #1861ac;
     border-left: none;
@@ -77,12 +77,7 @@ html {
   min-height: 100%;
 }
 
-img {
-    border-radius: 50%;
-}
-
 body {
-    background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
     margin-bottom: 60px;
 }
 
